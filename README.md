@@ -88,3 +88,24 @@ public function __construct()
     }
 ```
 
+### Domain Grouping
+
+Laravel-Whitelabel uses Laravel's built-in domain grouping to ensure that correct application flavors are being displayed,
+for the correct url. To add a white labeled domain to your application you can use (my preferred method) Laravel Valet
+to add another url mapped to your Laravel project.
+
+In the root of your Laravel directory run the following `valet link white-label.test --secure`. Then in your `web.php`
+you can create a domain group. Any ungrouped routes will be seen as the base application. 
+
+Read more on [Domain Routing](https://laravel.com/docs/9.x/routing#route-group-subdomain-routing)
+
+All routes in the domain group will show the flavors defined in the mapped flavors folder
+
+```
+    Route::domain('white-label.test')->group(function(){
+        Route::controller(AppController::class)->group(function(){
+            Route::get('/','index')->name('index');
+        });
+    });
+```
+
