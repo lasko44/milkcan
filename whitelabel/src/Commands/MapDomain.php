@@ -155,7 +155,7 @@ class MapDomain extends Command
         File::makeDirectory(MapDomain::PATH . '/' . $folder);
         $this->info('"'.$folder.'" created.');
     }
-    
+
     /**
      * @param string $domain
      * @param string $folder
