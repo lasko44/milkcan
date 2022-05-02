@@ -1,0 +1,24 @@
+{
+    "name": "milkcan/whitelabel",
+    "description": "Quickly and easily create different flavors of your laravel applications. Create reusable views for different brannds and use the same code",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Milkcan\\Whitelabel\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Matthew Laskiewicz",
+            "email": "matthew.laskiewicz@milkcan.io"
+        }
+    ],
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Milkcan\\Whitelabel\\WhitelabelServiceProvider"
+            ]
+        }
+    }
+}
