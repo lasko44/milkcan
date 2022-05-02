@@ -176,3 +176,25 @@ return[
 
 ```
 
+### Using Flavors in Blade Files
+
+The `@flavor()` directive can be used anywhere within your blade files including css classes and vue props
+
+Examples:
+
+Normal Usage
+
+``<h1 class="@flavor(styles.title-class)">@flavor(text.title)</h1>``
+
+Vue - Must wrap in single quotes when passing as a prop
+
+```
+   <search-bar
+        :bar="'@flavor(styles.search-bar)'"
+        :search="'@flavor(styles.search-btn)'"
+        :browse="'@flavor(styles.browse-btn)'"
+    ></search-bar>
+```
+
+
+
