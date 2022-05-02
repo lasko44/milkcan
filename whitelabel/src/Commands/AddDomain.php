@@ -44,6 +44,7 @@ class AddDomain extends Command
                 $this->info('Domain added with all flavor keys from default flavor files');
             }
             //TODO Implement Remove Options
+            //TODO Get rid of some options
             else{
                 $this->info('Domain and domain flavor directory added');
             }
