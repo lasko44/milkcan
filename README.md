@@ -196,5 +196,26 @@ Vue - Must wrap in single quotes when passing as a prop
     ></search-bar>
 ```
 
+### Adding Whitelabeled Domains
 
+Adding more domains and flavor folders is easy with `whitelabel:domain`. This command takes one required argument `{domain}`.
+Example `php artisan whitelabel:domain "newDomain.test"`. This will create a database entry with the new domain and folder
+name. A new empty folder will be created based on the domain argument in the config/flavor directory. 
 
+A new domain group will need to be added to web.php file to make flavors work correctly. 
+
+There are available options for creating folders when making a new whitelabeled domain. 
+
+`--all` Copies all flavor files and flavors from the base directory
+
+`--all-empty` Copies all flavor files but the files are empty
+
+`--default-empty` Copies default flavor files only but they are empty
+
+`--default-fill` Copies default flavor files only and fills the flavors based on base directory
+
+### Mapping Multiple Domains to One Flavor
+
+If you need to map multiple domains to one flavor directory you can use `whitelabel:map`. This command takes two 
+required arguments `{domain}` and `{folder}`. This will simply update the database to make sure the domain is mapped 
+correctly. 
